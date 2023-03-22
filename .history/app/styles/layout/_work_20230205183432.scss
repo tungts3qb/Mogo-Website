@@ -1,0 +1,5 @@
+.work {
+  padding-top: 10rem;
+}
+
+@include hoverEffect(".work-iteam", ".work-content");

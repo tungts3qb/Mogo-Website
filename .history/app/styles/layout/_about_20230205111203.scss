@@ -1,0 +1,120 @@
+.about {
+  padding-top: 9.3rem;
+  padding-bottom: 11rem;
+  background-color: white;
+
+  // ------ flex -box ----
+  //   &-list {
+  //     display: flex;
+  //     flex-wrap: wrap;
+  //     margin-left: -3rem;
+  //   }
+
+  //   &-item {
+  //     margin-left: 3rem;
+  //     width: calc(33.33% - 3rem);
+  //   }
+
+  // ------ css grid ----
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  // &-item {
+  //   position: relative;
+  //   z-index: 1;
+  //   transition: transform 0.25s linear;
+  //   &::after {
+  //     content: "";
+  //     @include absoluteFull();
+  //     @include bg($third-color);
+  //     z-index: -1;
+  //     transition: transform 0.25s linear;
+  //   }
+  //   &:hover {
+  //     transform: translate(-1rem, -1rem);
+  //     .about-content {
+  //       opacity: 1;
+  //       visibility: visible;
+  //     }
+  //     &::after {
+  //       transform: translate(1rem, 1rem);
+  //     }
+  //   }
+  // }
+
+  &-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  // &-content {
+  //   @include absoluteFull();
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   transition: all 0.25s linear;
+  //   position: absolute;
+  //   content: "";
+  //   background: linear-gradient(
+  //     to bottom,
+  //     rgba($primary-color, 0.8),
+  //     rgba($secondary-color, 0.8)
+  //   );
+  //   z-index: 2;
+  //   // display: flex;
+  //   // flex-direction: column;
+  //   // justify-content: center;
+  //   // align-items: center;
+  //   @include flexbox(center, center, column);
+  // }
+
+  &-icon {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  &-title {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    // responsive for flex box .about-item
+    // &-item {
+    //   width: 100%;
+    //   margin-bottom: 2.5rem;
+    // }
+
+    // responsive for grid
+    &-list {
+      grid-auto-columns: 80%;
+      grid-auto-flow: column;
+      grid-template-columns: unset;
+      row-gap: 2.5rem;
+      overflow-x: auto;
+      @include hideScroll();
+      padding: 1rem;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+    }
+
+    &-item {
+      scroll-snap-align: center;
+    }
+  }
+}
+
+@include hoverEffect(".about-item", ".about-content");

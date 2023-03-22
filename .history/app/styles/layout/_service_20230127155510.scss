@@ -1,0 +1,11 @@
+.service {
+  padding-top: 11rem 0 12rem;
+  @include bg(white);
+
+  &-list {
+    @include flexbox("stretch", "flex-start", "column");
+  }
+  &-item {
+    width: 33.33%;
+  }
+}

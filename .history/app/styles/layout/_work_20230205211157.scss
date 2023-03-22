@@ -1,0 +1,23 @@
+.work {
+  padding-top: 10rem;
+
+  &-list {
+    @include flexbox;
+  }
+
+  &-column {
+    width: 25%;
+  }
+
+  &-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &-content {
+    color: white;
+    text-align: center;
+  }
+}
+
+@include hoverEffect(".work-iteam", ".work-content", "false");

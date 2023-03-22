@@ -1,0 +1,12 @@
+.device {
+  padding-top: 11rem;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(white, 0.9),
+      rgba(white, 0.8)
+    ),
+    url("../images/img-bg-deviecs.jpg");
+  &-img {
+    margin: 0 auto;
+  }
+}

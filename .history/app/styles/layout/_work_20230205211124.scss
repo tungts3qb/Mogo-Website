@@ -1,0 +1,21 @@
+.work {
+  padding-top: 10rem;
+
+  &-list {
+    @include flexbox;
+  }
+
+  &-column {
+    width: 25%;
+  }
+
+  &-icon {
+    color: whit;
+  }
+
+  &-content {
+    color: white;
+  }
+}
+
+@include hoverEffect(".work-iteam", ".work-content", "false");

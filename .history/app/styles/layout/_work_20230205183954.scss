@@ -1,0 +1,9 @@
+.work {
+  padding-top: 10rem;
+
+  &-list {
+    @include flexbox;
+  }
+}
+
+@include hoverEffect(".work-iteam", ".work-content", "false");

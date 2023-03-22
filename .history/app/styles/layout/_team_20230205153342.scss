@@ -1,0 +1,60 @@
+.team {
+  background: #fff;
+  padding: 10rem 0;
+
+  &-image {
+    @include size(100%, 47rem);
+    object-fit: cover;
+  }
+
+  &-info {
+    margin-top: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  &-name {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  &-position {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: $text-color;
+  }
+
+  &-social {
+    @include flexbox(center, center);
+    &-link {
+      @include flexbox(center, center);
+      @include size(6rem);
+      @include bg($secondary-color);
+      color: $primary-color;
+      font-size: 2rem;
+      transform: all 0.2s ease;
+      &:hover {
+        color: white;
+        @include bg($primary-color);
+      }
+    }
+    &-item:not(:first-child) {
+      border-left: 1px solid $primary-color;
+    }
+  }
+
+  &-list {
+    @include flexbox(stretch, space-between);
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-column-gap: 2rem;
+  }
+
+  &-item {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@include hoverEffect(".team-main", ".team-content");

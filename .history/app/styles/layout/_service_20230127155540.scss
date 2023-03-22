@@ -1,0 +1,12 @@
+.service {
+  padding-top: 11rem 0 12rem;
+  @include bg(white);
+
+  &-list {
+    display: flex;
+    flex-direction: row;
+  }
+  &-item {
+    width: 33.33%;
+  }
+}

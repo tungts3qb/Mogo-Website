@@ -1,0 +1,116 @@
+mixin ListItem(title = "This is default title", caption)
+	li.list-item 
+		h2.list-title= title  
+		if caption 
+			span.list-caption= caption 
+		if block 
+			block
+
+mixin nemuLink(title, href="#")
+	li.header-menu-item 
+		a.header-menu-link(href= href)= title
+
+mixin headerBottomItem(number, title, className)
+	.header-bottom-item
+		span.header-bottom-number= number
+		soan.header-bottom-text= title
+
+mixin blockBox(caption, title, desc)
+	.block-box
+		h3.block-box-caption= caption 
+		h2.block-box-heading= title 
+		if desc 
+			p.block-box-desc= desc 
+
+mixin aboutItem(src, title, iconClass,alt="")
+	.about-item 
+		img.about-image(src= src,alt= alt)
+		.about-content 
+			i.about-icon(class= iconClass)
+			span.about-title= title
+
+mixin serviceItem(title, desc)
+	.service-item 
+		i.fa.fa-cog.service-item-icon 
+		.service-item-infor 
+			h3.service-item-title= title  
+			p.service-item-desc= desc
+
+mixin wedoItem(src, title, desc, active= "") 
+	.wedo-item(class= active)
+		.wedo-item-header 
+			img.wedo-item-icon(src= src)
+			h3.wedo-item-title= title
+			i.fal.fa-angle-up.wedo-item-arrow
+		.wedo-item-content 
+			.wedo-item-text= desc
+
+mixin teamSocial(facebook="#", twitter="#", pinterest="#", instagram="#")
+	ul.team-social 
+		li.team-social-item 
+			a.team-social-link(href= facebook)
+				i.fab.fa-facebook-f
+		li.team-social-item 
+			a.team-social-link(href= twitter)
+				i.fab.fa-twitter 
+		li.team-social-item 
+			a.team-social-link(href= pinterest)
+				i.fab.fa-pinterest
+		li.team-social-item 
+			a.team-social-link(href= instagram)
+				i.fab.fa-instagram
+
+mixin teamIteam(src="../images/img-team1.jpg", name="Christopher Cambell", position= "Branding/UX team")
+	.team-item 
+		.team-main 
+			img.team-image(src= src, alt="")
+			.team-content 
+				if block 
+					block 
+		.team-info 
+			h3.team-name= name
+			span.team-position= position
+
+mixin workIteam(src= "../images/img-work1.png", full="", icon = "fa fa-home", title= "Creatively designed", desc = "Lorem, ipsum dolor sit")
+	.work-iteam(class= full)
+		img.work-image(src= src)
+		.work-content 
+			i.work-icon(class= icon)
+			h3.work-title= title 
+			span.work-desc.text.text--light= desc
+
+mixin peopleItem(src="../images/img-people2.png", name="Mathew Dix", job="frontend developer",desc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis impedit numquam, dolor incidunt, aliquam beatae animi rem ea quis doloremque voluptatibus iste ex doloribus officia placeat illum nisi facere cumque!") 
+	li.people-item
+		img.people-avatar(src= src)
+		.people-info 
+			h3.people-name= name 
+			span.people-job.text.text--light= job 
+			p.people-desc.text= desc 
+
+mixin storyItem(src= "../images/img-blog1.png", dateNumber= 15, dateText= "Jan",title= "Lorem ipsum dolor sit amet consectetur adipisicing elit", desc= "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum nulla amet reprehenderit sed, perspiciatis magni at ad iusto vitae nam, possimus iure maiores repellendus. Ipsa et in perferendis facere vitae.",view= 542,comment= 17) 
+	li.story-item 
+		.story-media 
+			img.story-image(src= src, alt="")
+			.story-date 
+				span.story-date-number= dateNumber
+				span.story-date-text.text.text--light= dateText
+		h3.story-title= title
+		.story-desc.text
+			p.story-desc-inner= desc
+
+		.story-meta 
+			.story-meta-item 
+				i.fa.fa-eye.story-meta-icon 
+				span.story-meta-number.text= view
+			.story-meta-item 
+				i.fa.fa-comment.story-meta-icon 
+				span.story-meta-number.text= comment
+
+mixin quote-content (src="../images/img-quote.png", type=false , desc= "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio labore commodi eaque deleniti iure porro inventore est blanditiis sunt doloribus id cupiditate quo ipsum sapiente, obcaecati perferendis necessitatibus. Ad, recusandae.", author = "Joe Doe")
+	.quote-content 
+		if 
+		.quote-icon 
+			img(src= src)
+		.quote-info 
+			p.quote-desc= desc 
+			span.quote-author= author

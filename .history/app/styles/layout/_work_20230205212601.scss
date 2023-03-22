@@ -1,0 +1,40 @@
+.work {
+  padding-top: 10rem;
+
+  &-list {
+    @include flexbox;
+    height: 78rem;
+  }
+
+  &-column {
+    width: 25%;
+  }
+
+  &-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &-content {
+    color: white;
+    text-align: center;
+  }
+
+  &-title {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  &-image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  //   &-iteam {
+  //     &--full {
+  //       height: 78rem;
+  //     }
+  //   }
+}
+
+@include hoverEffect(".work-iteam", ".work-content", "false");

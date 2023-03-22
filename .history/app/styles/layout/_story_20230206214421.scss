@@ -1,0 +1,8 @@
+.story {
+  padding: 10rem 0;
+  background: white;
+
+  &-list {
+    @include flexbox(stretch, space-between);
+  }
+}
